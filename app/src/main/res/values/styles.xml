@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Base Widget Style -->
+    <style name="Widget.App" parent="android:Widget" />
+
+    <!-- Base Text Appearance Style -->
+    <style name="TextAppearance.App" parent="TextAppearance.MaterialComponents.Body1" />
+
     <!-- Text Styles -->
     <style name="TextAppearance.App.Display" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textSize">@dimen/text_size_display</item>
