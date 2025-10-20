@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="spacing_xxlarge">48dp</dimen>
+
+    <!-- Margins and Padding -->
+    <dimen name="margin_horizontal">16dp</dimen>
+    <dimen name="margin_vertical">16dp</dimen>
+    <dimen name="padding_content">16dp</dimen>
+    <dimen name="padding_card">12dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_display">34sp</dimen>
+    <dimen name="text_size_headline">24sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_body_small">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_label">11sp</dimen>
+
+    <!-- Avatar Sizes -->
+    <dimen name="avatar_size_small">40dp</dimen>
+    <dimen name="avatar_size_medium">56dp</dimen>
+    <dimen name="avatar_size_large">80dp</dimen>
+    <dimen name="avatar_size_xlarge">120dp</dimen>
+
+    <!-- Avatar Border -->
+    <dimen name="avatar_border_width">2dp</dimen>
+    <dimen name="avatar_border_width_large">3dp</dimen>
+
+    <!-- Avatar Grid -->
+    <dimen name="avatar_grid_min_height">200dp</dimen>
+    <dimen name="avatar_grid_max_height">400dp</dimen>
+
+    <!-- Touch Targets -->
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="touch_target_small">36dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">18dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+
+    <!-- Card and Container -->
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
+
+    <!-- List Item -->
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+
+    <!-- Dividers -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin">16dp</dimen>
+
+    <!-- Form Elements -->
+    <dimen name="form_field_spacing">12dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_min_width">88dp</dimen>
+
+    <!-- Dialog -->
+    <dimen name="dialog_padding">24dp</dimen>
+    <dimen name="dialog_title_bottom_margin">20dp</dimen>
+    <dimen name="dialog_button_bar_height">52dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_app_bar">4dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_dialog">24dp</dimen>
+    <dimen name="elevation_fab">6dp</dimen>
+</resources>

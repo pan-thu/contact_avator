@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Sort Menu Item -->
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/menu_sort"
+        android:contentDescription="@string/cd_sort_contacts"
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sort_name_asc"
+                    android:title="@string/contacts_sort_az" />
+                <item
+                    android:id="@+id/sort_name_desc"
+                    android:title="@string/contacts_sort_za" />
+                <item
+                    android:id="@+id/sort_recent"
+                    android:title="@string/contacts_sort_recent" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
