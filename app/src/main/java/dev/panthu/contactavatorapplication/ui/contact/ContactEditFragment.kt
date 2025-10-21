@@ -43,7 +43,7 @@ class ContactEditFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // Set up avatar picker result listener
-        setFragmentResultListener(AvatarPickerBottomSheetDialogFragment.REQUEST_KEY_AVATAR) { _, bundle ->
+        setFragmentResultListener(AvatarPickerBottomSheetDialogFragment.REQUEST_KEY) { _, bundle ->
             val avatarId = bundle.getInt(AvatarPickerBottomSheetDialogFragment.RESULT_KEY_AVATAR_ID, -1)
             val avatarUri = bundle.getString(AvatarPickerBottomSheetDialogFragment.RESULT_KEY_AVATAR_URI)
 
