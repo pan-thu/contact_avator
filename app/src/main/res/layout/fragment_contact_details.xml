@@ -54,7 +54,7 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:contentDescription="@string/cd_avatar"
-                    app:avatarSize="large"
+                    app:avatarSize="@dimen/avatar_size_large"
                     tools:src="@drawable/avatar_01" />
 
                 <!-- Contact Name -->

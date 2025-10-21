@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:avatarSize="medium"
+        app:avatarSize="@dimen/avatar_size_medium"
         tools:src="@drawable/avatar_01" />
 
     <!-- Name (Primary Text) -->
