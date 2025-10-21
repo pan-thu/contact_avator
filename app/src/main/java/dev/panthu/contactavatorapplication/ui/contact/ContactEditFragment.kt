@@ -278,8 +278,8 @@ class ContactEditFragment : Fragment() {
         val currentAvatarUri = viewModel.avatarUri.value
 
         val bottomSheet = AvatarPickerBottomSheetDialogFragment.newInstance(
-            currentAvatarId = currentAvatarId,
-            currentAvatarUri = currentAvatarUri
+            initialAvatarId = currentAvatarId,
+            initialAvatarUri = currentAvatarUri
         )
         bottomSheet.show(parentFragmentManager, AvatarPickerBottomSheetDialogFragment.TAG)
     }
