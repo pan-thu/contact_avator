@@ -8,6 +8,9 @@
         <!-- Avatar URI for custom images -->
         <attr name="avatarUri" format="string" />
 
+        <!-- Avatar size -->
+        <attr name="avatarSize" format="dimension|reference" />
+
         <!-- Show border around avatar -->
         <attr name="showBorder" format="boolean" />
 
