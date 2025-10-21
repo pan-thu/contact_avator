@@ -136,7 +136,7 @@ class ContactDetailsFragment : Fragment() {
             avatarView.apply {
                 when {
                     contact.avatarUri != null -> {
-                        setAvatarFromUri(contact.avatarUri)
+                        setAvatarUri(contact.avatarUri)
                     }
                     contact.avatarId != null -> {
                         setAvatarResource(contact.avatarId)

@@ -264,11 +264,11 @@ class ContactEditFragment : Fragment() {
     private fun updateAvatarDisplay(avatarId: Int?, avatarUri: String?) {
         binding.avatarView.apply {
             if (avatarUri != null) {
-                setAvatarFromUri(avatarUri)
+                setAvatarUri(avatarUri)
             } else if (avatarId != null) {
-                setAvatarFromResource(avatarId)
+                setAvatarResource(avatarId)
             } else {
-                setAvatarFromResource(R.drawable.avatar_default)
+                setAvatarResource(R.drawable.avatar_default)
             }
         }
     }
