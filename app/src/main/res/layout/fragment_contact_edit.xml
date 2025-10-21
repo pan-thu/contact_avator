@@ -55,7 +55,7 @@
                 <!-- Change Avatar Overlay Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnChangeAvatar"
-                    style="@style/Widget.Material3.Button.TonalButton"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
@@ -72,7 +72,7 @@
             <!-- Name Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/nameInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xlarge"
@@ -100,7 +100,7 @@
             <!-- Phone Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/phoneInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/form_field_spacing"
@@ -128,7 +128,7 @@
             <!-- Email Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/form_field_spacing"
@@ -156,7 +156,7 @@
             <!-- Address Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/addressInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/form_field_spacing"
@@ -200,7 +200,7 @@
                 <!-- Cancel Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCancel"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/button_height"
                     android:layout_marginEnd="@dimen/spacing_small"
@@ -211,7 +211,7 @@
                 <!-- Save Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSave"
-                    style="@style/Widget.Material3.Button"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/button_height"
                     android:minWidth="@dimen/button_min_width"

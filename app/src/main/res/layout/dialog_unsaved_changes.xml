@@ -37,7 +37,7 @@
         <!-- Keep Editing Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKeepEditing"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_small"
@@ -47,7 +47,7 @@
         <!-- Discard Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDiscard"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="@dimen/button_min_width"

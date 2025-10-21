@@ -45,7 +45,6 @@
 
         <!-- Material Components -->
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
-        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
     </style>
 
     <style name="Theme.ContactAvatorApplication.NoActionBar">
