@@ -9,10 +9,11 @@ import androidx.room.RoomDatabase
  * Room database for storing contacts with avatar support.
  * Version 1: Initial schema with Contact entity including avatar fields.
  * Version 2: Added index on name field for optimized search performance.
+ * Version 3: Added dateOfBirth field to Contact entity.
  */
 @Database(
     entities = [Contact::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class ContactDatabase : RoomDatabase() {

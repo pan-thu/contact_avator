@@ -79,6 +79,9 @@ dependencies {
     // Image Loading - Coil
     implementation("io.coil-kt:coil:2.5.0")
 
+    // Phone Number Validation
+    implementation("com.googlecode.libphonenumber:libphonenumber:8.13.26")
+
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

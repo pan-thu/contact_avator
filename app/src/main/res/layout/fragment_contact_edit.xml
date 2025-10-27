@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <!-- AppBar for consistent navigation -->
     <com.google.android.material.appbar.AppBarLayout
@@ -17,8 +16,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
             app:navigationIcon="@drawable/ic_close"
+            app:navigationIconTint="@android:color/white"
             app:title="@string/nav_edit_contact"
+            app:titleTextColor="@android:color/white"
             app:navigationContentDescription="@string/action_close" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -59,13 +61,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
-                    android:layout_marginBottom="-16dp"
-                    android:minHeight="@dimen/touch_target_small"
+                    android:layout_marginBottom="8dp"
+                    android:minHeight="40dp"
+                    android:maxLines="1"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
                     android:text="@string/avatar_change"
-                    android:textSize="@dimen/text_size_caption"
+                    android:textSize="12sp"
                     app:cornerRadius="@dimen/button_corner_radius"
                     app:icon="@drawable/ic_edit"
-                    app:iconSize="@dimen/icon_size_small"
+                    app:iconSize="16dp"
+                    app:iconPadding="4dp"
                     tools:ignore="VisualLintButtonSize" />
             </FrameLayout>
 
@@ -93,7 +101,6 @@
                     android:imeOptions="actionNext"
                     android:inputType="textPersonName|textCapWords"
                     android:maxLines="1"
-                    android:hint="@string/contact_name_hint"
                     tools:text="John Doe" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +114,8 @@
                 android:hint="@string/contact_phone_label"
                 app:boxStrokeColor="@color/primary"
                 app:errorEnabled="true"
-                app:helperTextEnabled="false"
+                app:helperText="@string/contact_phone_hint"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
@@ -121,8 +129,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="phone"
                     android:maxLines="1"
-                    android:hint="@string/contact_phone_hint"
-                    tools:text="+1 234-567-8900" />
+                    tools:text="+66804896430" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Email Field -->
@@ -149,7 +156,6 @@
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:hint="@string/contact_email_hint"
                     tools:text="john.doe@example.com" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,7 +185,6 @@
                     android:inputType="textPostalAddress|textMultiLine|textCapSentences"
                     android:maxLines="4"
                     android:minLines="2"
-                    android:hint="@string/contact_address_hint"
                     tools:text="123 Main Street\nNew York, NY 10001" />
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -11,6 +11,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:elevation="@dimen/elevation_app_bar">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -21,8 +22,10 @@
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
             app:menu="@menu/menu_contact_details"
             app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
             app:title="@string/contact_details_title"
-            app:titleTextColor="?android:attr/textColorPrimaryInverse" />
+            app:titleTextColor="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

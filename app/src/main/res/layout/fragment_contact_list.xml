@@ -11,6 +11,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:elevation="@dimen/elevation_app_bar">
 
         <!-- Toolbar with Search -->
@@ -22,8 +23,9 @@
             android:elevation="@dimen/elevation_app_bar"
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
             app:menu="@menu/menu_contact_list"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
             app:title="@string/contacts_title"
-            app:titleTextColor="?android:attr/textColorPrimaryInverse" />
+            app:titleTextColor="@android:color/white" />
 
         <!-- Search View -->
         <com.google.android.material.textfield.TextInputLayout
@@ -32,14 +34,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_small"
             android:hint="@string/contacts_search_hint"
-            app:boxBackgroundMode="outline"
+            android:background="@android:color/white"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/card_corner_radius"
             app:boxCornerRadiusBottomStart="@dimen/card_corner_radius"
             app:boxCornerRadiusTopEnd="@dimen/card_corner_radius"
             app:boxCornerRadiusTopStart="@dimen/card_corner_radius"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/ic_search"
-            app:startIconContentDescription="@string/cd_search_contacts">
+            app:startIconContentDescription="@string/cd_search_contacts"
+            app:hintTextColor="@color/text_secondary"
+            app:startIconTint="@color/text_secondary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/searchEditText"
@@ -47,7 +55,9 @@
                 android:layout_height="wrap_content"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

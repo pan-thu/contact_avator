@@ -1,6 +1,8 @@
 package dev.panthu.contactavatorapplication.util
 
 import android.util.Patterns
+import com.google.i18n.phonenumbers.PhoneNumberUtil
+import com.google.i18n.phonenumbers.NumberParseException
 import dev.panthu.contactavatorapplication.R
 
 /**
@@ -20,8 +22,7 @@ sealed class ValidationResult {
 object ValidationUtils {
 
     private const val MAX_NAME_LENGTH = 100
-    private const val MIN_PHONE_LENGTH = 7
-    private const val MAX_PHONE_LENGTH = 20
+    private val phoneNumberUtil = PhoneNumberUtil.getInstance()
 
     /**
      * Validates a name field.
@@ -40,24 +41,51 @@ object ValidationUtils {
     }
 
     /**
-     * Validates a phone number field.
+     * Validates a phone number field using Google's libphonenumber.
      * Requirements:
      * - Not empty
-     * - Contains only digits, spaces, +, -, (, )
-     * - Reasonable length (7-20 characters)
+     * - Must include country code with + prefix (e.g., +66804896430)
+     * - Must be a valid phone number format for the country
+     * - Validates against international phone number standards
      */
     fun validatePhone(phone: String?): ValidationResult {
         if (phone.isNullOrBlank()) {
             return ValidationResult.Error(R.string.error_phone_required)
         }
 
-        val cleanedPhone = phone.replace(Regex("[\\s\\-()]+"), "")
+        val trimmedPhone = phone.trim()
 
-        return when {
-            cleanedPhone.length < MIN_PHONE_LENGTH -> ValidationResult.Error(R.string.error_phone_invalid)
-            cleanedPhone.length > MAX_PHONE_LENGTH -> ValidationResult.Error(R.string.error_phone_invalid)
-            !cleanedPhone.matches(Regex("^\\+?[0-9]+$")) -> ValidationResult.Error(R.string.error_phone_invalid)
-            else -> ValidationResult.Success
+        // Check if it starts with + (country code required)
+        if (!trimmedPhone.startsWith("+")) {
+            return ValidationResult.Error(R.string.error_phone_country_code_required)
+        }
+
+        return try {
+            // Parse the phone number without a default region
+            // The number must include the country code
+            val phoneNumber = phoneNumberUtil.parse(trimmedPhone, null)
+
+            // Check if the number is valid
+            if (phoneNumberUtil.isValidNumber(phoneNumber)) {
+                ValidationResult.Success
+            } else {
+                ValidationResult.Error(R.string.error_phone_invalid)
+            }
+        } catch (e: NumberParseException) {
+            // Invalid phone number format
+            when (e.errorType) {
+                NumberParseException.ErrorType.INVALID_COUNTRY_CODE ->
+                    ValidationResult.Error(R.string.error_phone_invalid_country_code)
+                NumberParseException.ErrorType.NOT_A_NUMBER ->
+                    ValidationResult.Error(R.string.error_phone_invalid)
+                NumberParseException.ErrorType.TOO_SHORT_NSN,
+                NumberParseException.ErrorType.TOO_SHORT_AFTER_IDD ->
+                    ValidationResult.Error(R.string.error_phone_too_short)
+                NumberParseException.ErrorType.TOO_LONG ->
+                    ValidationResult.Error(R.string.error_phone_too_long)
+                else ->
+                    ValidationResult.Error(R.string.error_phone_invalid)
+            }
         }
     }
 

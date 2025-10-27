@@ -30,9 +30,12 @@
     <string name="contact_name_label">Name</string>
     <string name="contact_name_hint">Enter name</string>
     <string name="contact_phone_label">Phone</string>
-    <string name="contact_phone_hint">Enter phone number</string>
+    <string name="contact_phone_hint">Include country code (e.g., 66 804 896 430)</string>
     <string name="contact_email_label">Email</string>
     <string name="contact_email_hint">Enter email address</string>
+    <string name="contact_dob_label">Date of Birth</string>
+    <string name="contact_dob_hint">Select date</string>
+    <string name="select_date_of_birth">Select Date of Birth</string>
     <string name="contact_address_label">Address</string>
     <string name="contact_address_hint">Enter address</string>
 
@@ -42,6 +45,10 @@
     <string name="error_name_too_long">Name is too long (max 100 characters)</string>
     <string name="error_phone_required">Phone number is required</string>
     <string name="error_phone_invalid">Invalid phone number format</string>
+    <string name="error_phone_country_code_required">Phone must start with + and country code (e.g., +66804896430)</string>
+    <string name="error_phone_invalid_country_code">Invalid country code</string>
+    <string name="error_phone_too_short">Phone number is too short for this country</string>
+    <string name="error_phone_too_long">Phone number is too long</string>
     <string name="error_email_invalid">Invalid email address</string>
 
     <!-- Avatar -->

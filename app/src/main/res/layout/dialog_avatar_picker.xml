@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/choose_avatar"
-        android:textColor="?attr/colorOnSurface"
+        android:textColor="@color/text_primary"
         android:paddingBottom="@dimen/spacing_normal" />
 
     <!-- Avatar Preview -->
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/select_avatar_from_options"
-        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textColor="@color/text_secondary"
         android:gravity="center"
         android:paddingBottom="@dimen/spacing_small" />
 
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_small"
             android:text="@string/cancel"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="@color/text_primary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/confirm_button"

@@ -8,12 +8,10 @@ import androidx.annotation.DrawableRes
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dev.panthu.contactavatorapplication.databinding.DialogAvatarPickerBinding
+import dev.panthu.contactavatorapplication.ui.contact.ViewModelFactory
 
 /**
  * Bottom sheet dialog fragment for selecting contact avatars.
@@ -57,10 +55,7 @@ class AvatarPickerBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private val binding get() = _binding!!
 
     private val viewModel: AvatarPickerViewModel by viewModels {
-        AvatarPickerViewModelFactory(
-            defaultViewModelProviderFactory.create(AvatarPickerViewModel::class.java),
-            this
-        )
+        ViewModelFactory(requireActivity().application, this)
     }
 
     private lateinit var avatarAdapter: AvatarGridAdapter
@@ -209,23 +204,5 @@ class AvatarPickerBottomSheetDialogFragment : BottomSheetDialogFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    /**
-     * Custom ViewModelProvider.Factory to properly inject SavedStateHandle.
-     */
-    private class AvatarPickerViewModelFactory(
-        private val defaultViewModel: ViewModel,
-        private val fragment: AvatarPickerBottomSheetDialogFragment
-    ) : ViewModelProvider.Factory {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(AvatarPickerViewModel::class.java)) {
-                // Create with SavedStateHandle
-                val savedStateHandle = SavedStateHandle()
-                return AvatarPickerViewModel(savedStateHandle) as T
-            }
-            throw IllegalArgumentException("Unknown ViewModel class")
-        }
     }
 }

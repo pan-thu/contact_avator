@@ -2,19 +2,16 @@ package dev.panthu.contactavatorapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import dev.panthu.contactavatorapplication.databinding.ActivityMainBinding
 
 /**
  * Main Activity for ContactAvatar+ application.
  * Uses traditional Android Views with Navigation Component and View Binding.
+ * Each fragment manages its own toolbar for maximum flexibility.
  */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up toolbar as action bar
-        setSupportActionBar(binding.toolbar)
-
-        // Note: Navigation will be fully set up in Phase 4 when fragments are created
-        // For now, we just have the basic layout structure ready
+        // Note: Fragments manage their own toolbars
+        // No need to set up action bar here
     }
 
     override fun onSupportNavigateUp(): Boolean {

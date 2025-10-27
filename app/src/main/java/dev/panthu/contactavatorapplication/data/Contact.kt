@@ -26,6 +26,9 @@ data class Contact(
     @ColumnInfo(name = "address")
     val address: String? = null,
 
+    @ColumnInfo(name = "date_of_birth")
+    val dateOfBirth: Long? = null,
+
     @ColumnInfo(name = "avatar_id")
     val avatarId: Int? = null,
 

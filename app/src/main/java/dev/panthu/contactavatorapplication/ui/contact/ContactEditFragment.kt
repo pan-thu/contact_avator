@@ -13,11 +13,15 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import dev.panthu.contactavatorapplication.R
 import dev.panthu.contactavatorapplication.databinding.FragmentContactEditBinding
 import dev.panthu.contactavatorapplication.ui.avatar.AvatarPickerBottomSheetDialogFragment
 import dev.panthu.contactavatorapplication.util.ValidationResult
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 /**
  * Fragment for creating or editing a contact.
@@ -106,6 +110,11 @@ class ContactEditFragment : Fragment() {
             showAvatarPicker()
         }
 
+        // Date of birth picker
+        binding.dobEditText.setOnClickListener {
+            showDatePicker()
+        }
+
         // Save button
         binding.btnSave.setOnClickListener {
             viewModel.saveContact()
@@ -160,6 +169,13 @@ class ContactEditFragment : Fragment() {
         viewModel.address.observe(viewLifecycleOwner) { address ->
             if (binding.addressEditText.text.toString() != address) {
                 binding.addressEditText.setText(address)
+            }
+        }
+
+        viewModel.dateOfBirth.observe(viewLifecycleOwner) { dateOfBirth ->
+            val formattedDate = dateOfBirth?.let { formatDate(it) } ?: ""
+            if (binding.dobEditText.text.toString() != formattedDate) {
+                binding.dobEditText.setText(formattedDate)
             }
         }
 
@@ -328,6 +344,26 @@ class ContactEditFragment : Fragment() {
                 findNavController().navigateUp()
             }
         }
+    }
+
+    private fun showDatePicker() {
+        val currentDate = viewModel.dateOfBirth.value ?: System.currentTimeMillis()
+
+        val datePicker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText(R.string.select_date_of_birth)
+            .setSelection(currentDate)
+            .build()
+
+        datePicker.addOnPositiveButtonClickListener { selectedDate ->
+            viewModel.updateDateOfBirth(selectedDate)
+        }
+
+        datePicker.show(parentFragmentManager, "DATE_PICKER")
+    }
+
+    private fun formatDate(timestamp: Long): String {
+        val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+        return dateFormat.format(Date(timestamp))
     }
 
     override fun onDestroyView() {

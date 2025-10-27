@@ -26,6 +26,7 @@ class ContactEditViewModel(
         private const val KEY_PHONE = "phone"
         private const val KEY_EMAIL = "email"
         private const val KEY_ADDRESS = "address"
+        private const val KEY_DATE_OF_BIRTH = "date_of_birth"
         private const val KEY_AVATAR_ID = "avatar_id"
         private const val KEY_AVATAR_URI = "avatar_uri"
         private const val KEY_IS_DIRTY = "is_dirty"
@@ -47,6 +48,9 @@ class ContactEditViewModel(
 
     private val _address = MutableLiveData<String>()
     val address: LiveData<String> = _address
+
+    private val _dateOfBirth = MutableLiveData<Long?>()
+    val dateOfBirth: LiveData<Long?> = _dateOfBirth
 
     private val _avatarId = MutableLiveData<Int?>()
     val avatarId: LiveData<Int?> = _avatarId
@@ -121,6 +125,10 @@ class ContactEditViewModel(
                         _address.value = loadedContact.address ?: ""
                         savedStateHandle[KEY_ADDRESS] = loadedContact.address ?: ""
                     }
+                    if (_dateOfBirth.value == null) {
+                        _dateOfBirth.value = loadedContact.dateOfBirth
+                        savedStateHandle[KEY_DATE_OF_BIRTH] = loadedContact.dateOfBirth
+                    }
                     if (_avatarId.value == null) {
                         _avatarId.value = loadedContact.avatarId
                         savedStateHandle[KEY_AVATAR_ID] = loadedContact.avatarId
@@ -182,6 +190,15 @@ class ContactEditViewModel(
     }
 
     /**
+     * Updates the date of birth field.
+     */
+    fun updateDateOfBirth(newDateOfBirth: Long?) {
+        _dateOfBirth.value = newDateOfBirth
+        savedStateHandle[KEY_DATE_OF_BIRTH] = newDateOfBirth
+        updateDirtyState()
+    }
+
+    /**
      * Updates the avatar selection.
      */
     fun updateAvatar(newAvatarId: Int?, newAvatarUri: String?) {
@@ -215,6 +232,7 @@ class ContactEditViewModel(
                         phone = _phone.value.orEmpty().trim(),
                         email = _email.value?.trim()?.takeIf { it.isNotEmpty() },
                         address = _address.value?.trim()?.takeIf { it.isNotEmpty() },
+                        dateOfBirth = _dateOfBirth.value,
                         avatarId = _avatarId.value,
                         avatarUri = _avatarUri.value
                     )
@@ -225,6 +243,7 @@ class ContactEditViewModel(
                         phone = _phone.value.orEmpty().trim(),
                         email = _email.value?.trim()?.takeIf { it.isNotEmpty() },
                         address = _address.value?.trim()?.takeIf { it.isNotEmpty() },
+                        dateOfBirth = _dateOfBirth.value,
                         avatarId = _avatarId.value,
                         avatarUri = _avatarUri.value
                     )
@@ -282,6 +301,7 @@ class ContactEditViewModel(
                     _phone.value?.trim() != original.phone ||
                     _email.value?.trim()?.takeIf { it.isNotEmpty() } != original.email ||
                     _address.value?.trim()?.takeIf { it.isNotEmpty() } != original.address ||
+                    _dateOfBirth.value != original.dateOfBirth ||
                     _avatarId.value != original.avatarId ||
                     _avatarUri.value != original.avatarUri
         } else {
@@ -290,6 +310,7 @@ class ContactEditViewModel(
                     !_phone.value.isNullOrBlank() ||
                     !_email.value.isNullOrBlank() ||
                     !_address.value.isNullOrBlank() ||
+                    _dateOfBirth.value != null ||
                     _avatarId.value != null ||
                     _avatarUri.value != null
         }
@@ -306,6 +327,7 @@ class ContactEditViewModel(
         _phone.value = savedStateHandle.get<String>(KEY_PHONE) ?: ""
         _email.value = savedStateHandle.get<String>(KEY_EMAIL) ?: ""
         _address.value = savedStateHandle.get<String>(KEY_ADDRESS) ?: ""
+        _dateOfBirth.value = savedStateHandle.get<Long?>(KEY_DATE_OF_BIRTH)
         _avatarId.value = savedStateHandle.get<Int?>(KEY_AVATAR_ID)
         _avatarUri.value = savedStateHandle.get<String?>(KEY_AVATAR_URI)
         _isDirty.value = savedStateHandle.get<Boolean>(KEY_IS_DIRTY) ?: false
