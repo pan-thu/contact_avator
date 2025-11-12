@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes for AvatarView -->
+    <declare-styleable name="AvatarView">
+        <!-- Avatar resource ID (drawable) -->
+        <attr name="avatarResourceId" format="reference" />
+
+        <!-- Avatar URI for custom images -->
+        <attr name="avatarUri" format="string" />
+
+        <!-- Avatar size -->
+        <attr name="avatarSize" format="dimension|reference" />
+
+        <!-- Show border around avatar -->
+        <attr name="showBorder" format="boolean" />
+
+        <!-- Border color -->
+        <attr name="borderColor" format="color|reference" />
+
+        <!-- Border width -->
+        <attr name="borderWidth" format="dimension|reference" />
+
+        <!-- Placeholder resource while loading -->
+        <attr name="placeholderDrawable" format="reference" />
+
+        <!-- Error drawable if loading fails -->
+        <attr name="errorDrawable" format="reference" />
+    </declare-styleable>
+</resources>

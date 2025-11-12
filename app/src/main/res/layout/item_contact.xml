@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingStart="@dimen/list_item_padding"
+    android:paddingTop="@dimen/spacing_small"
+    android:paddingEnd="@dimen/list_item_padding"
+    android:paddingBottom="@dimen/spacing_small">
+
+    <!-- Avatar View (48dp medium size) -->
+    <dev.panthu.contactavatorapplication.ui.components.AvatarView
+        android:id="@+id/avatarView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/cd_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:avatarSize="@dimen/avatar_size_medium"
+        tools:src="@drawable/avatar_01" />
+
+    <!-- Name (Primary Text) -->
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_body"
+        app:layout_constraintStart_toEndOf="@id/avatarView"
+        app:layout_constraintEnd_toStartOf="@id/chevronIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/phoneTextView"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="John Doe" />
+
+    <!-- Phone Number (Secondary Text) -->
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="@dimen/text_size_body_small"
+        app:layout_constraintStart_toEndOf="@id/avatarView"
+        app:layout_constraintEnd_toStartOf="@id/chevronIcon"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="+1 (555) 123-4567" />
+
+    <!-- Navigation Chevron Icon -->
+    <ImageView
+        android:id="@+id/chevronIcon"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_chevron_right"
+        android:tint="?android:attr/textColorTertiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

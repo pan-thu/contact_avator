@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactListFragment">
+
+    <!-- Contact List Fragment (Placeholder for Phase 4) -->
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="dev.panthu.contactavatorapplication.ui.contact.ContactListFragment"
+        android:label="@string/contacts_title"
+        tools:layout="@layout/fragment_contact_list">
+
+        <action
+            android:id="@+id/action_contactList_to_contactEdit"
+            app:destination="@id/contactEditFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_contactList_to_contactDetails"
+            app:destination="@id/contactDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <!-- Contact Edit Fragment (Phase 3 - IMPLEMENTED) -->
+    <fragment
+        android:id="@+id/contactEditFragment"
+        android:name="dev.panthu.contactavatorapplication.ui.contact.ContactEditFragment"
+        android:label="@string/nav_edit_contact"
+        tools:layout="@layout/fragment_contact_edit">
+
+        <argument
+            android:name="contactId"
+            android:defaultValue="-1L"
+            app:argType="long"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_contactEdit_back"
+            app:popUpTo="@id/contactListFragment" />
+    </fragment>
+
+    <!-- Contact Details Fragment (Placeholder for Phase 4) -->
+    <fragment
+        android:id="@+id/contactDetailsFragment"
+        android:name="dev.panthu.contactavatorapplication.ui.contact.ContactDetailsFragment"
+        android:label="@string/nav_contact_details"
+        tools:layout="@layout/fragment_contact_details">
+
+        <argument
+            android:name="contactId"
+            android:defaultValue="-1L"
+            app:argType="long"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_contactDetails_to_contactEdit"
+            app:destination="@id/contactEditFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+</navigation>

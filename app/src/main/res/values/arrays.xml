@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Array of available avatar resource IDs -->
+    <integer-array name="avatar_resources">
+        <item>@drawable/avatar_01</item>
+        <item>@drawable/avatar_02</item>
+        <item>@drawable/avatar_03</item>
+        <item>@drawable/avatar_04</item>
+        <item>@drawable/avatar_05</item>
+        <item>@drawable/avatar_06</item>
+        <item>@drawable/avatar_07</item>
+        <item>@drawable/avatar_08</item>
+        <item>@drawable/avatar_09</item>
+        <item>@drawable/avatar_10</item>
+    </integer-array>
+
+    <!-- Avatar content descriptions for accessibility -->
+    <string-array name="avatar_content_descriptions">
+        <item>@string/cd_avatar_blue</item>
+        <item>@string/cd_avatar_green</item>
+        <item>@string/cd_avatar_orange</item>
+        <item>@string/cd_avatar_purple</item>
+        <item>@string/cd_avatar_red</item>
+        <item>@string/cd_avatar_teal</item>
+        <item>@string/cd_avatar_pink</item>
+        <item>@string/cd_avatar_indigo</item>
+        <item>@string/cd_avatar_lime</item>
+        <item>@string/cd_avatar_amber</item>
+    </string-array>
+</resources>

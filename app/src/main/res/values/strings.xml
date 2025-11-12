@@ -1,0 +1,139 @@
+<resources>
+    <string name="app_name">ContactAvatar+</string>
+
+    <!-- Common Actions -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_add">Add</string>
+    <string name="action_search">Search</string>
+    <string name="action_close">Close</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Navigation -->
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_add_contact">Add Contact</string>
+    <string name="nav_edit_contact">Edit Contact</string>
+    <string name="nav_contact_details">Contact Details</string>
+
+    <!-- Contact List Screen -->
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_empty">No contacts yet</string>
+    <string name="contacts_empty_description">Add your first contact to get started</string>
+    <string name="contacts_search_hint">Search contacts</string>
+    <string name="contacts_sort_az">A → Z</string>
+    <string name="contacts_sort_za">Z → A</string>
+    <string name="contacts_sort_recent">Recently Added</string>
+
+    <!-- Contact Form Fields -->
+    <string name="contact_name_label">Name</string>
+    <string name="contact_name_hint">Enter name</string>
+    <string name="contact_phone_label">Phone</string>
+    <string name="contact_phone_hint">Include country code (e.g., 66 804 896 430)</string>
+    <string name="contact_email_label">Email</string>
+    <string name="contact_email_hint">Enter email address</string>
+    <string name="contact_dob_label">Date of Birth</string>
+    <string name="contact_dob_hint">Select date</string>
+    <string name="select_date_of_birth">Select Date of Birth</string>
+    <string name="contact_address_label">Address</string>
+    <string name="contact_address_hint">Enter address</string>
+
+    <!-- Contact Form Validation -->
+    <string name="error_name_required">Name is required</string>
+    <string name="error_name_empty">Name cannot be empty</string>
+    <string name="error_name_too_long">Name is too long (max 100 characters)</string>
+    <string name="error_phone_required">Phone number is required</string>
+    <string name="error_phone_invalid">Invalid phone number format</string>
+    <string name="error_phone_country_code_required">Phone must start with + and country code (e.g., +66804896430)</string>
+    <string name="error_phone_invalid_country_code">Invalid country code</string>
+    <string name="error_phone_too_short">Phone number is too short for this country</string>
+    <string name="error_phone_too_long">Phone number is too long</string>
+    <string name="error_email_invalid">Invalid email address</string>
+
+    <!-- Avatar -->
+    <string name="avatar_label">Avatar</string>
+    <string name="avatar_change">Change Avatar</string>
+    <string name="avatar_select">Select Avatar</string>
+    <string name="avatar_picker_title">Choose Avatar</string>
+    <string name="avatar_default">Default avatar</string>
+    <string name="avatar_reset">Reset to Default</string>
+    <string name="avatar_import">Import from Gallery</string>
+    <string name="avatar_remove_custom">Remove Custom Avatar</string>
+    <string name="avatar_description">Avatar for %1$s</string>
+
+    <!-- Avatar Picker Dialog -->
+    <string name="choose_avatar">Choose Avatar</string>
+    <string name="avatar_preview">Avatar preview</string>
+    <string name="select_avatar_from_options">Select an avatar from the options below</string>
+    <string name="import_from_gallery">Import from Gallery</string>
+    <string name="reset_to_default">Reset to Default</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="avatar_option">Avatar option</string>
+    <string name="selected">Selected</string>
+    <string name="avatar_content_description">Contact avatar</string>
+
+    <!-- Contact Details -->
+    <string name="contact_details_title">Contact Details</string>
+    <string name="contact_details_call">Call</string>
+    <string name="contact_details_message">Message</string>
+    <string name="contact_details_email">Email</string>
+    <string name="contact_details_no_phone">No phone number</string>
+    <string name="contact_details_no_email">No email address</string>
+    <string name="contact_details_no_address">No address</string>
+
+    <!-- Delete Confirmation -->
+    <string name="delete_contact_title">Delete Contact?</string>
+    <string name="delete_contact_message">Are you sure you want to delete %1$s?</string>
+    <string name="delete_contact_confirm">Delete</string>
+
+    <!-- Save Confirmation -->
+    <string name="save_changes_title">Unsaved Changes</string>
+    <string name="save_changes_message">You have unsaved changes. Do you want to discard them?</string>
+    <string name="save_changes_discard">Discard</string>
+    <string name="save_changes_keep_editing">Keep Editing</string>
+
+    <!-- Success Messages -->
+    <string name="contact_saved">Contact saved</string>
+    <string name="contact_updated">Contact updated</string>
+    <string name="contact_deleted">Contact deleted</string>
+
+    <!-- Error Messages -->
+    <string name="error_saving_contact">Error saving contact</string>
+    <string name="error_loading_contact">Error loading contact</string>
+    <string name="error_deleting_contact">Error deleting contact</string>
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_avatar_load">Could not load avatar</string>
+
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_avatar">Contact avatar</string>
+    <string name="cd_avatar_blue">Blue circle avatar</string>
+    <string name="cd_avatar_green">Green square avatar</string>
+    <string name="cd_avatar_orange">Orange avatar</string>
+    <string name="cd_avatar_purple">Purple avatar</string>
+    <string name="cd_avatar_red">Red avatar</string>
+    <string name="cd_avatar_teal">Teal avatar</string>
+    <string name="cd_avatar_pink">Pink avatar</string>
+    <string name="cd_avatar_indigo">Indigo avatar</string>
+    <string name="cd_avatar_lime">Lime avatar</string>
+    <string name="cd_avatar_amber">Amber avatar</string>
+    <string name="cd_avatar_default">Default avatar</string>
+    <string name="cd_add_contact">Add new contact</string>
+    <string name="cd_search_contacts">Search contacts</string>
+    <string name="cd_sort_contacts">Sort contacts</string>
+    <string name="cd_contact_options">Contact options</string>
+
+    <!-- Loading States -->
+    <string name="loading">Loading…</string>
+    <string name="saving">Saving…</string>
+
+    <!-- Sort Menu -->
+    <string name="menu_sort">Sort</string>
+    <string name="menu_filter">Filter</string>
+
+    <!-- Additional Actions -->
+    <string name="action_view_map">View on Map</string>
+    <string name="error_no_app">No app available to handle this action</string>
+
+</resources>
